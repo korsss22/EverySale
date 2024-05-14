@@ -1,0 +1,96 @@
+body {
+  width: 1100px;
+  margin: 0 auto;
+}
+.section {
+  width: 1100px;
+  height: 1540px;
+  padding: 25px;
+  border: 1px solid black;
+}
+.imageContainer {
+  width: 1080px; /*1050px + 30px 여유 공간*/
+  height: 330px;
+  margin-bottom: 20px;
+}
+.categoryContainer {
+  width: 1080px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+.numberContainer {
+  width: 1080px;
+  height: 50px;
+  text-align: center;
+}
+.numberContainer > a {
+  text-decoration: none;
+  color: black;
+}
+.category {
+  width: 200px;
+  height: 70px;
+  margin-left: 15px;
+  margin-top: 15px;
+  float: left;
+  background-color: rgb(255, 84, 161);
+}
+.search {
+  width: 200px;
+  height: 20px;
+  float: right;
+  margin-right: 15px;
+  margin-top: 40px;
+  background-color: rgb(255, 84, 161);
+}
+.search > input[type="text"] {
+  float: left;
+  width: 150px;
+  height: 20px;
+}
+.search > input[type="submit"] {
+  float: left;
+  width: 42px;
+  height: 26px;
+}
+div.item {
+  width: 180px;
+  height: 300px;
+  position: relative;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  float: left;
+  background-image: url();
+  background-size: 180px 240px;
+  border: 3px solid rgb(255, 84, 161);
+}
+
+div.itemInfo {
+  width: 180px;
+  height: 60px;
+
+  position: absolute;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  white-space: owrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  top: 240px;
+  background-color: aliceblue;
+}
+
+div.itemPrice {
+  width: 180px;
+  height: 30px;
+  position: absolute;
+  text-align: center;
+  overflow: visible;
+  top: 0px;
+  background-color: aliceblue;
+}
+div.itemPrice {
+  color: black;
+}
