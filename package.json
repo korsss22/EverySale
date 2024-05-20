@@ -1,0 +1,21 @@
+{
+  "name": "section-main",
+  "version": "1.0.0",
+  "description": "EverySale",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon server",
+    "start": "nodemon --watch EverySale/ -r dotenv/config EverySale/project/main.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "oracledb": "^6.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

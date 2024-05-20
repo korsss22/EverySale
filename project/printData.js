@@ -1,12 +1,17 @@
-function printData(data) {
+//printData.js
+function printData(data, page) {
     const maxPrintRow = 3;
     const maxPrintCol = 4;
+    const itemsPerPage = 12;
+
+    const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = page * itemsPerPage;
 
     let html = '<div class="section">';
     let row = 0;
     let col = 0;
 
-    for (let i = 0; i < Math.min(data.length, maxPrintRow * maxPrintCol); i++) {
+    for (let i = startIndex; i < endIndex; i++) {
         const productData = data[i];
 
         if (!productData) break;
