@@ -4,8 +4,9 @@ body {
 }
 .section {
   width: 1100px;
-  height: 950px;
+  height: 1150px;
   padding: 25px;
+  border: 1px solid black;
 }
 .imageContainer {
   width: 1080px; /*1050px + 30px 여유 공간*/
@@ -98,7 +99,7 @@ div.Price {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
+/*
 div.discountPercent {
   display: inline-block;
   color: white;
@@ -107,4 +108,4 @@ div.discountPercent {
   width: 39px;
   height: 21px;
   background-color: red;
-}
+}*/

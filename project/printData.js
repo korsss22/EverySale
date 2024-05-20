@@ -19,9 +19,11 @@ function printData(data, page) {
         const productId = productData[0];
         const productName = productData[1];
         const productPrice = productData[2];
+        const productPriceFormatted = productPrice.toLocaleString();
+
         const imageLink = productData[3];
-        const discount = productData[4];
-        const dataLink = productData[5];
+        //const discount = productData[4];
+        const dataLink = productData[4];
 
         if (col % maxPrintCol === 0) {
             if (col !== 0) {
@@ -38,12 +40,9 @@ function printData(data, page) {
                     <div class="itemInfo"><b>${productName}</b></div>
                     <div class="itemPrice"><b>최저</b>
                         <div class="Price">
-                        ${productPrice}
+                        ${productPriceFormatted}
                         </div>
                         <b>원</b>
-                    <div class="discountPercent">
-                    ${discount}%
-                    </div>
                     </div>
                 </div>
             </a>
@@ -54,5 +53,8 @@ function printData(data, page) {
     html += '</div>'; // section 닫음
     return html;
 }
-
+//<div class="discountPercent">
+//${discount}%
+//</div>
 module.exports = printData;
+
