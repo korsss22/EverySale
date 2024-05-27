@@ -35,7 +35,7 @@ function printData(data, page) {
     }
 
     html += `
-            <a href="${dataLink}" rel="noreferrer noopener">
+            <a href="https://search.shopping.naver.com/catalog/${productId}">
                 <div class="item" style="background-image: url(${imageLink}");">
                     <div class="itemInfo"><b>${productName}</b></div>
                     <div class="itemPrice"><b>최저</b>
