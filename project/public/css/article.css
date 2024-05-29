@@ -1,0 +1,103 @@
+body {
+  width: 100%;
+}
+
+.section {
+  margin: 0 auto;
+  width: 935px; /* 1100px * 0.85 */
+  height: 977.5px; /* 1150px * 0.85 */
+  padding: 21.25px; /* 25px * 0.85 */
+  border: 1px solid black;
+}
+
+.imageContainer {
+  margin: 0 auto;
+  width: 918px; /* 1080px * 0.85 */
+  height: 289px; /* 340px * 0.85 */
+  margin-bottom: 17px; /* 20px * 0.85 */
+}
+
+.numberContainer {
+  margin: 0 auto;
+  width: 297.5px; /* 350px * 0.85 */
+  height: 42.5px; /* 50px * 0.85 */
+  display: flex;
+  justify-content: center;
+}
+
+ul.number {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.number > a {
+  margin: 0 1.7px; /* 2px * 0.85 */
+  width: 39.1px; /* 46px * 0.85 */
+  height: 39.1px; /* 46px * 0.85 */
+  border-radius: 12.75px; /* 15px * 0.85 */
+  background-color: rgb(207, 207, 207);
+  color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul.number > a {
+  font-size: 25.5px; /* 30px * 0.85 */
+}
+
+ul.number > a:hover {
+  background-color: rgb(255, 0, 0);
+}
+
+div.item {
+  width: 204px; /* 240px * 0.85 */
+  height: 215px; /* 270px * 0.85 */
+  position: relative;
+  margin-top: 12.75px; /* 15px * 0.85 */
+  margin-left: 12.75px; /* 15px * 0.85 */
+  margin-right: 12.75px; /* 15px * 0.85 */
+  float: left;
+  background-color: aliceblue;
+  background-size: 204px 215px; /* 240px * 0.85, 270px * 0.85 */
+  border-radius: 8.5px; /* 10px * 0.85 */
+}
+
+div.itemInfo {
+  width: 204px; /* 240px * 0.85 */
+  height: 21.25px; /* 25px * 0.85 */
+  font-size: 12.75px; /* 15px * 0.85 */
+  color: black;
+  position: absolute;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  top: 229.5px; /* 270px * 0.85 */
+}
+
+div.itemPrice {
+  display: inline-block;
+  width: 204px; /* 240px * 0.85 */
+  color: black;
+  position: absolute;
+  text-align: center;
+  top: 252px; /* 295px * 0.85 */
+}
+
+div.itemPrice b,
+div.itemPrice .Price {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+div.Price {
+  font-weight: bolder;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

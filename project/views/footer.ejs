@@ -3,43 +3,341 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>EverySale</title>
     <link rel="stylesheet" href="/css/section.css" />
-    <style>
-      .footer {
-        background-color: rgb(250, 248, 248);
-      }
-      .footerText > b {
-        font-size: 12px;
-        color: rgb(27, 27, 27);
-      }
-      .footerText > p {
-        color: rgb(139, 139, 139);
-        font-size: 11px;
-      }
-      .footerText {
-        margin: 0 auto;
-        width: 935px;
-      }
-    </style>
+    <link rel="stylesheet" href="/css/nav.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/article.css" />
   </head>
   <body>
-    <div style="background-color: red">dsds</div>
-    <div><%- html %> <%- numNav %></div>
+    <header>
+      <h1
+        style="
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+            Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+            sans-serif;
+          color: red;
+        "
+      >
+        EverySale
+      </h1>
+    </header>
 
-    <div class="footer">
-      <div class="footerText">
-        <b>EverySale 정보</b>
-        <p>Tel : -----------</p>
-        <p>메일 : ESa@everysale.co.kr</p>
-        <p>정보 출처 : 네이버 쇼핑, Amazon, Ebay</p>
-        <br />
-        <p>
-          EverySale에 표시된 상품들에 대하여 EverySale은 통신판매중개자로서 거래
-          당사자가 아니며<br />상품거래 정보 및 거래에 관여하지 않고, 어떠한
-          의무와 책임도 부담하지 않습니다
-        </p>
+    <hr />
+
+    <nav class="navbar">
+      <ul class="navbar-menu">
+        <li class="navbar-item">
+          <a class="navbar-link" href="http://localhost:3000/"><b>홈</b></a>
+        </li>
+        <li class="navbar-item">
+          <a class="navbar-link" href="#"><b>카테고리</b></a>
+          <div class="submenu">
+            <ul class="submenu-menu">
+              <li class="submenu-item">
+                <a class="submenu-link" href="?category1=화장품/미용"
+                  >화장품/미용</a
+                >
+                <div class="subsubmenu">
+                  <ul class="submenu-menu">
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=화장품/미용&category2=마스크/팩"
+                        >마스크/팩</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=화장품/미용&category2=베이스메이크업"
+                        >베이스메이크업</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=화장품/미용&category2=색조메이크업"
+                        >색조메이크업</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=화장품/미용&category2=향수"
+                        >향수</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=화장품/미용&category2=클렌징"
+                        >클렌징</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="submenu-item">
+                <a class="submenu-link" href="?category1=패션잡화">패션잡화</a>
+                <div class="subsubmenu">
+                  <ul class="submenu-menu">
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=패션잡화&category2=남성의류"
+                        >남성의류</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=패션잡화&category2=여성의류"
+                        >여성의류</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=패션잡화&category2=신발"
+                        >신발</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=패션잡화&category2=지갑"
+                        >지갑</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=패션잡화&category2=시계"
+                        >시계</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="submenu-item">
+                <a class="submenu-link" href="?category1=생활/건강"
+                  >생활/건강</a
+                >
+                <div class="subsubmenu">
+                  <ul class="submenu-menu">
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=생활/건강&category2=건강관리용품"
+                        >건강관리용품</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=생활/건강&category2=생활용품"
+                        >생활용품</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=생활/건강&category2=욕실용품"
+                        >욕실용품</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=생활/건강&category2=주방용품"
+                        >주방용품</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=생활/건강&category2=청소용품"
+                        >청소용품</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="submenu-item">
+                <a class="submenu-link" href="?category1=디지털/가전"
+                  >전자제품</a
+                >
+                <div class="subsubmenu">
+                  <ul class="submenu-menu">
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=디지털/가전&category2=PC"
+                        >데스크탑</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=디지털/가전&category2=노트북"
+                        >노트북</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=디지털/가전&category2=모니터"
+                        >모니터</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=디지털/가전&category2=휴대폰"
+                        >휴대폰</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=디지털/가전&category2=카메라"
+                        >카메라</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="submenu-item">
+                <a class="submenu-link" href="?category1=가구/인테리어"
+                  >가구/인테리어</a
+                >
+                <div class="subsubmenu">
+                  <ul class="submenu-menu">
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=가구/인테리어&category2=거실가구"
+                        >거실가구</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=가구/인테리어&category2=수납가구"
+                        >수납가구</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=가구/인테리어&category2=주방가구"
+                        >주방가구</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=가구/인테리어&category2=침실가구"
+                        >침실가구</a
+                      >
+                    </li>
+                    <li class="submenu-item">
+                      <a
+                        class="submenu-link"
+                        href="?category1=가구/인테리어&category2=홈데코"
+                        >홈데코</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="navbar-item">
+          <a class="navbar-link" href="#"><b>장바구니</b></a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="slider">
+      <div class="slides">
+        <div class="slide">
+          <img
+            src="https://shopping-phinf.pstatic.net/main_4655165/46551654620.20240401140950.jpg?type=f640"
+            alt="Image 1"
+          />
+        </div>
+        <div class="slide"><img src="더미이미지.jpg" alt="Image 2" /></div>
+        <div class="slide"><img src="제품홍보.png" alt="Image 3" /></div>
+        <!-- Add more images as needed -->
       </div>
-    </div>
+      <div class="dots">
+        <span class="dot" onclick="currentSlide(1)">&#8213;</span>
+        <span class="dot" onclick="currentSlide(2)">&#8213;</span>
+        <span class="dot" onclick="currentSlide(3)">&#8213;</span>
+        <!-- Add more dots as needed -->
+      </div>
+      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlide(1)">&#10095;</a>
+      <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+          showSlides((slideIndex += n));
+        }
+
+        function currentSlide(n) {
+          showSlides((slideIndex = n));
+        }
+
+        function showSlides(n) {
+          let slides = document.getElementsByClassName("slide");
+          let dots = document.getElementsByClassName("dot");
+
+          if (n > slides.length) {
+            slideIndex = 1;
+          }
+          if (n < 1) {
+            slideIndex = slides.length;
+          }
+
+          for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+
+          for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+
+          slides[slideIndex - 1].style.display = "block";
+          dots[slideIndex - 1].className += " active";
+        }
+      </script>
+    </section>
+
+    <article>
+      <div><%- html %> <%- numNav %></div>
+    </article>
+
+    <footer>
+      <div class="footer">
+        <div class="footerText">
+          <b>EverySale 정보</b>
+          <p>Tel : -----------</p>
+          <p>메일 : ESa@everysale.co.kr</p>
+          <p>정보 출처 : 네이버 쇼핑, Amazon, Ebay</p>
+          <br />
+          <p>
+            EverySale에 표시된 상품들에 대하여 EverySale은 통신판매중개자로서
+            거래 당사자가 아니며<br />상품거래 정보 및 거래에 관여하지 않고,
+            어떠한 의무와 책임도 부담하지 않습니다
+          </p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

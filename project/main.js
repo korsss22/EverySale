@@ -4,18 +4,17 @@ const path = require("path");
 const { connectDB, disconnectDB } = require("./connectDB");
 //const getMainPageData = require("./getMainPageData");
 //const getSearchedData = require("./getSearchedData");
-const { sleep, handleRequest }= require("./handleRequest");
+const { sleep, handleRequest } = require("./handleRequest");
 const getData = require("./getData");
 const { updateTable } = require("./database");
 const app = express();
 const PORT = 3000;
 
-
 async function main() {
   let connection;
   connection = await connectDB();
-  
-  updateTable(connection)
+
+  updateTable(connection);
 }
 
 //main(); //main함수!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -23,7 +22,7 @@ async function main() {
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-const defaultUrl = 'localhost:3000/';
+const defaultUrl = "localhost:3000/";
 
 // 미들웨어: 도메인에 접속하면 기본 URL로 리다이렉트
 // app.use((req, res, next) => {
@@ -46,7 +45,14 @@ app.get("/", async (req, res) => {
     const category3 = req.query.category3;
     const product = req.query.product;
     const sort = req.query.sort;
-    const data = await getData(connection, category1, category2, category3, product, sort);
+    const data = await getData(
+      connection,
+      category1,
+      category2,
+      category3,
+      product,
+      sort
+    );
     console.log("검색된 데이터:", data);
     return data;
   });
