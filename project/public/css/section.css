@@ -1,15 +1,16 @@
 body {
-  width: 935px; /* 1100px * 0.85 */
-  margin: 0 auto;
+  width: 100%; /* 1100px * 0.85 */
 }
 
 .section {
+  margin: 0 auto;
   width: 935px; /* 1100px * 0.85 */
   height: 977.5px; /* 1150px * 0.85 */
   padding: 21.25px; /* 25px * 0.85 */
 }
 
 .imageContainer {
+  margin: 0 auto;
   width: 918px; /* 1080px * 0.85 */
   height: 289px; /* 340px * 0.85 */
   margin-bottom: 17px; /* 20px * 0.85 */
@@ -92,7 +93,7 @@ div.itemPrice .Price {
 }
 
 div.Price {
-  font-weight:bolder;
+  font-weight: bolder;
   display: inline-block;
   text-align: center;
   white-space: nowrap;
