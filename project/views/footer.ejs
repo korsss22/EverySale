@@ -11,15 +11,16 @@
     <link rel="stylesheet" href="/css/article.css" />
     <link rel="stylesheet" href="/css/sideBar.css" />
     <link rel="stylesheet" href="/css/search.css" />
+    <link rel="stylesheet" href="/css/selectSort.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
 
       <div class="top">
         <header>
-          <h1>
-            EverySale
-          </h1>
+          <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: red;">
+            <a href="http://localhost:3000" style="text-decoration: none; color: inherit;">EverySale</a>
+        </h1>
           <div class="search-container">
             <form action="/" method="GET">
               <input type="text" placeholder="어떤 상품을 찾으시나요?" name="product" />
@@ -33,240 +34,71 @@
         <hr />
 
         <nav class="navbar">
+          <div class="centerBar">
           <ul class="navbar-menu">
-            <li class="navbar-item">
-              <a class="category" href="#"><b>카테고리</b></a>
-              <div class="submenu">
-                <ul class="submenu-menu">
-                  <li class="submenu-item">
-                    <a class="submenu-link" href="?category1=화장품/미용"
-                      >화장품/미용</a
-                    >
-                    <div class="subsubmenu">
+              <li class="navbar-item">
+                  <a class="navbar-link" href="?category1=화장품/미용"><b>화장품/미용</b></a>
+                  <div class="submenu">
                       <ul class="submenu-menu">
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=화장품/미용&category2=마스크/팩"
-                            >마스크/팩</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=화장품/미용&category2=베이스메이크업"
-                            >베이스메이크업</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=화장품/미용&category2=색조메이크업"
-                            >색조메이크업</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=화장품/미용&category2=향수"
-                            >향수</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=화장품/미용&category2=클렌징"
-                            >클렌징</a
-                          >
-                        </li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=화장품/미용&category2=마스크/팩">마스크/팩</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=화장품/미용&category2=베이스메이크업">베이스메이크업</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=화장품/미용&category2=색조메이크업">색조메이크업</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=화장품/미용&category2=향수">향수</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=화장품/미용&category2=클렌징">클렌징</a></li>
                       </ul>
-                    </div>
-                  </li>
-                  <li class="submenu-item">
-                    <a class="submenu-link" href="?category1=패션잡화"
-                      >패션잡화</a
-                    >
-                    <div class="subsubmenu">
+                  </div>
+              </li>
+              <li class="navbar-item">
+                  <a class="navbar-link" href="?category1=패션잡화"><b>패션잡화</b></a>
+                  <div class="submenu">
                       <ul class="submenu-menu">
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=패션잡화&category2=남성의류"
-                            >남성의류</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=패션잡화&category2=여성의류"
-                            >여성의류</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=패션잡화&category2=신발"
-                            >신발</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=패션잡화&category2=지갑"
-                            >지갑</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=패션잡화&category2=시계"
-                            >시계</a
-                          >
-                        </li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=패션잡화&category2=남성의류">남성의류</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=패션잡화&category2=여성의류">여성의류</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=패션잡화&category2=신발">신발</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=패션잡화&category2=지갑">지갑</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=패션잡화&category2=시계">시계</a></li>
                       </ul>
-                    </div>
-                  </li>
-                  <li class="submenu-item">
-                    <a class="submenu-link" href="?category1=생활/건강"
-                      >생활/건강</a
-                    >
-                    <div class="subsubmenu">
+                  </div>
+              </li>
+              <li class="navbar-item">
+                  <a class="navbar-link" href="?category1=생활용품"><b>생활용품</b></a>
+                  <div class="submenu">
                       <ul class="submenu-menu">
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=생활/건강&category2=건강관리용품"
-                            >건강관리용품</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=생활/건강&category2=생활용품"
-                            >생활용품</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=생활/건강&category2=욕실용품"
-                            >욕실용품</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=생활/건강&category2=주방용품"
-                            >주방용품</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=생활/건강&category2=청소용품"
-                            >청소용품</a
-                          >
-                        </li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=생활용품&category2=건강관리용품">건강관리용품</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=생활용품&category2=생활용품">생활용품</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=생활용품&category2=욕실용품">욕실용품</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=생활용품&category2=주방용품">주방용품</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=생활용품&category2=청소용품">청소용품</a></li>
                       </ul>
-                    </div>
-                  </li>
-                  <li class="submenu-item">
-                    <a class="submenu-link" href="?category1=디지털/가전"
-                      >전자제품</a
-                    >
-                    <div class="subsubmenu">
+                  </div>
+              </li>
+              <li class="navbar-item">
+                  <a class="navbar-link" href="?category1=전자제품"><b>전자제품</b></a>
+                  <div class="submenu">
                       <ul class="submenu-menu">
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=디지털/가전&category2=PC"
-                            >데스크탑</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=디지털/가전&category2=노트북"
-                            >노트북</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=디지털/가전&category2=모니터"
-                            >모니터</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=디지털/가전&category2=휴대폰"
-                            >휴대폰</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=디지털/가전&category2=카메라"
-                            >카메라</a
-                          >
-                        </li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=전자제품&category2=PC">데스크탑</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=전자제품&category2=노트북">노트북</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=전자제품&category2=모니터">모니터</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=전자제품&category2=휴대폰">휴대폰</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=전자제품&category2=카메라">카메라</a></li>
                       </ul>
-                    </div>
-                  </li>
-                  <li class="submenu-item">
-                    <a class="submenu-link" href="?category1=가구/인테리어"
-                      >가구/인테리어</a
-                    >
-                    <div class="subsubmenu">
+                  </div>
+              </li>
+              <li class="navbar-item">
+                  <a class="navbar-link" href="?category1=가구/인테리어"><b>가구/인테리어</b></a>
+                  <div class="submenu">
                       <ul class="submenu-menu">
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=가구/인테리어&category2=거실가구"
-                            >거실가구</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=가구/인테리어&category2=수납가구"
-                            >수납가구</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=가구/인테리어&category2=주방가구"
-                            >주방가구</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=가구/인테리어&category2=침실가구"
-                            >침실가구</a
-                          >
-                        </li>
-                        <li class="submenu-item">
-                          <a
-                            class="submenu-link"
-                            href="?category1=가구/인테리어&category2=홈데코"
-                            >홈데코</a
-                          >
-                        </li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=가구/인테리어&category2=거실가구">거실가구</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=가구/인테리어&category2=수납가구">수납가구</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=가구/인테리어&category2=주방가구">주방가구</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=가구/인테리어&category2=침실가구">침실가구</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=가구/인테리어&category2=홈데코">홈데코</a></li>
                       </ul>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="navbar-item">
-              <a class="navbar-link" href="#"><b>장바구니</b></a>
-              <div class="barAnimation"></div>
-            </li>
+                  </div>
+              </li>
           </ul>
-        </nav>
+        </div>
+      </nav>
       </div>
 
       <section>
