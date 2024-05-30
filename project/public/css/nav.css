@@ -1,9 +1,11 @@
 /* 네비게이션 바 스타일 */
 .navbar {
   display: flex;
+  margin: 0 auto;
   width: 935px;
+  height: 40px;
   background-color: #ffffff;
-  padding: 10px 20px;
+  padding: 10px 15px;
 }
 
 .navbar-menu {
@@ -16,6 +18,7 @@
 
 .navbar-item {
   position: relative;
+  margin-top: -20px;
   margin-right: 20px;
 }
 
@@ -27,8 +30,18 @@
   transition: background-color 0.3s;
 }
 
+.category {
+  color: white;
+  background-color: black;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  display: block;
+  transition: background-color 0.3s;
+}
+
 .navbar-link:hover {
-  background-color: #ff0000;
+  background-color: red;
   border-radius: 5px;
 }
 
@@ -40,9 +53,9 @@
   left: 0;
   background-color: #ffffff;
   padding: 10px 0;
-  border-radius: 5px;
   min-width: 200px;
   z-index: 1000;
+  box-shadow: 2px 2px 5px rgb(218, 218, 218);
 }
 
 .submenu-menu {
@@ -79,9 +92,9 @@
   left: 200px;
   background-color: #ffffff;
   padding: 10px 0;
-  border-radius: 5px;
   min-width: 200px;
   z-index: 1000;
+  box-shadow: 2px 2px 5px rgb(218, 218, 218);
 }
 
 .submenu-item:hover .subsubmenu {

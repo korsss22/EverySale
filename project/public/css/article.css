@@ -1,5 +1,10 @@
 body {
-  width: 100%;
+  width: 99%;
+}
+
+.wrapper {
+  width: 950px;
+  margin: 0 auto;
 }
 
 .section {
@@ -7,7 +12,7 @@ body {
   width: 935px; /* 1100px * 0.85 */
   height: 977.5px; /* 1150px * 0.85 */
   padding: 21.25px; /* 25px * 0.85 */
-  border: 1px solid black;
+  border: 2px solid rgb(237, 237, 237);
 }
 
 .imageContainer {
@@ -45,7 +50,7 @@ ul.number > a {
 }
 
 ul.number > a {
-  font-size: 25.5px; /* 30px * 0.85 */
+  font-size: 18px; /* 30px * 0.85 */
 }
 
 ul.number > a:hover {
@@ -63,6 +68,11 @@ div.item {
   background-color: aliceblue;
   background-size: 204px 215px; /* 240px * 0.85, 270px * 0.85 */
   border-radius: 8.5px; /* 10px * 0.85 */
+}
+
+div.item:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
 }
 
 div.itemInfo {

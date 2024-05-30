@@ -1,0 +1,17 @@
+body {
+  position: relative;
+}
+
+.ad {
+  position: absolute;
+  top: 80%;
+  left: 80%;
+  width: 300px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+.ridAd {
+  background-color: gray;
+  border-radius: 50px;
+}
