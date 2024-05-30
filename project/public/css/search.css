@@ -1,0 +1,29 @@
+/* Additional CSS for the search bar */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  margin-top: -100px;
+}
+
+.search-container input {
+  width: 300px;
+  padding: 10px;
+  border: 2px solid red;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.search-container button {
+  padding: 10px;
+  border: 2px solid red;
+  background-color: red;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-container button:hover {
+  background-color: darkred;
+}
