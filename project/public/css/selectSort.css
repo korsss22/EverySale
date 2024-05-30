@@ -1,50 +1,36 @@
+/* 리스트 가로 정렬 및 기본 스타일 */
+.sortContainer {
+  margin: 0 auto;
+  width: 1000px;
+}
 .selectSort ul {
-  list-style-type: none; /* Remove default list style */
-  padding: 0; /* Remove default padding */
-  margin: 0; /* Remove default margin */
-  display: flex; /* Display items in a row */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* 가로 배열 */
+
+  justify-content: center; /* 중앙 정렬 */
 }
 
 .selectSort li {
-  margin-right: 15px; /* Space between items */
-  position: relative; /* For positioning the circle */
+  margin-right: 20px; /* 리스트 아이템 간격 */
+  list-style-type: none;
+  float: left;
 }
 
 .selectSort a {
-  text-decoration: none; /* Remove underline from links */
-  color: black; /* Default text color */
-  padding: 10px 20px; /* Padding inside the link */
-  transition: color 0.3s; /* Smooth transition for text color */
+  color: black; /* 기본 글자 색상 */
+  text-decoration: none; /* 밑줄 제거 */
+  padding: 10px;
+  transition: color 0.3s, border-bottom 0.3s; /* 전환 효과 */
+  position: relative;
 }
 
 .selectSort a:hover {
-  color: blue; /* Text color on hover */
+  color: red; /* 마우스 올렸을 때 글자색 변경 */
 }
 
 .selectSort a.selected {
-  color: red; /* Text color for selected item */
-  text-decoration: underline; /* Underline for selected item */
-}
-
-.selectSort li::before {
-  content: ""; /* Create a pseudo-element */
-  position: absolute; /* Position it absolutely */
-  top: 50%; /* Center it vertically */
-  left: -10px; /* Position it to the left of the text */
-  width: 10px; /* Set width */
-  height: 10px; /* Set height */
-  background-color: black; /* Default circle color */
-  border-radius: 50%; /* Make it a circle */
-  transform: translateY(-50%); /* Center it vertically */
-  transition: background-color 0.3s; /* Smooth transition for background color */
-}
-
-.selectSort a:hover + li::before,
-.selectSort li:hover::before {
-  background-color: blue; /* Circle color on hover */
-}
-
-.selectSort a.selected + li::before,
-.selectSort li.selected::before {
-  background-color: red; /* Circle color for selected item */
+  color: red; /* 선택된 항목 글자색 */
+  border-bottom: 2px solid red; /* 선택된 항목 밑줄 */
 }

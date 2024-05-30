@@ -31,7 +31,7 @@
     
         </header>
 
-        <hr />
+        
 
         <nav class="navbar">
           <div class="centerBar">
@@ -96,9 +96,45 @@
                       </ul>
                   </div>
               </li>
+              <li class="navbar-item">
+                <a class="navbar-link" href="?category1=식품"><b>식품</b></a>
+                <div class="submenu">
+                    <ul class="submenu-menu">
+                        <li class="submenu-item"><a class="submenu-link" href="?category1=식품&category2=건강식품">건강식품</a></li>
+                        <li class="submenu-item"><a class="submenu-link" href="?category1=식품&category2=다이어트식품">다이어트식품</a></li>
+                        <li class="submenu-item"><a class="submenu-link" href="?category1=식품&category2=라면/면류">라면/면류</a></li>
+                        <li class="submenu-item"><a class="submenu-link" href="?category1=식품&category2=밀키트">밀키트</a></li>
+                        <li class="submenu-item"><a class="submenu-link" href="?category1=식품&category2=수산물">수산물</a></li>
+                        <li class="submenu-item"><a class="submenu-link" href="?category1=식품&category2=음료">음료</a></li>
+                        <li class="submenu-item"><a class="submenu-link" href="?category1=식품&category2=장류">장류</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="navbar-item">
+              <a class="navbar-link" href="?category1=스포츠/레저"><b>스포츠/레저</b></a>
+              <div class="submenu">
+                  <ul class="submenu-menu">
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=골프">골프</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=낚시">낚시</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=농구">농구</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=등산">등산</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=배구">배구</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=배드민턴">배드민턴</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=수영">수영</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=스케이트/보드/롤러">스케이트/보드/롤러</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=야구">야구</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=테니스">테니스</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=헬스">헬스</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=축구">축구</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=캠핑">캠핑</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=자전거">자전거</a></li>
+                  </ul>
+              </div>
+          </li>
           </ul>
         </div>
       </nav>
+
       </div>
 
       <section>
@@ -155,15 +191,41 @@
           </script>
         </div>
       </section>
-
+      
       <article>
-        <div class="selectSort">
-          
-          <li><a href="&sort="><b>기본</b></a></li>
-          <li><a href="&sort=asc"><b>낮은 가격순</b></a></li>
-          <li><a href="&sort=desc"><b>높은 가격순</b></a></li>
-        </div>
-        <div><%- html %> <%- numNav %></div>
+        <div class="sortContainer">
+        <fieldset style="border: none;">
+          <legend>
+              <div class="selectSort">
+                  <li><a href="#" class="sort-link" data-sort=""><b>기본</b></a></li>
+                  <li><a href="#" class="sort-link" data-sort="asc"><b>낮은 가격순</b></a></li>
+                  <li><a href="#" class="sort-link" data-sort="desc"><b>높은 가격순</b></a></li>
+              </div>
+          </legend>
+          <div><%- html %> <%- numNav %></div>
+      </fieldset>
+    </div>
+  
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('.sort-link');
+        const currentUrl = window.location.href;
+        const urlParams = new URLSearchParams(window.location.search);
+        const currentSort = urlParams.get('sort');
+
+        links.forEach(link => {
+            const sortParam = link.getAttribute('data-sort');
+            const newUrl = new URL(currentUrl);
+            newUrl.searchParams.set('sort', sortParam);
+
+            link.setAttribute('href', newUrl.toString());
+
+            if (sortParam === currentSort || (sortParam === '' && !currentSort)) {
+                link.classList.add('selected');
+            }
+        });
+    });
+      </script>
       </article>
 
       <aside>

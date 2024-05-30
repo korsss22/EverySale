@@ -1,9 +1,11 @@
 header {
+  margin: 0 auto;
   /* background-color: red; */
   color: #000000;
-  width: 320%;
-  height: 110px;
+  width: 1000px;
+  height: 109px;
   padding: 15px 0;
+  border-bottom: 1px solid rgb(201, 201, 201);
 }
 
 .top {
@@ -17,11 +19,8 @@ header {
 }
 
 header > h1 {
-  display: inline-block;
-  width: 200px;
-  height: 100px;
+  float: left;
   color: red;
-  margin-left: 5%;
   font-size: 50px;
   font-weight: 900;
 }

@@ -1,9 +1,7 @@
 /* Additional CSS for the search bar */
 .search-container {
-  display: inline-block;
-
-  justify-content: center;
-  margin: 20px 430px 0;
+  margin-top: 50px;
+  margin-left: 600px;
 }
 
 .search-container input {
