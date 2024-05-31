@@ -1,0 +1,401 @@
+<!-- footer.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EverySale</title>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      @import url(/css/section.css) screen and (min-width: 600px);
+      @import url(/css/nav.css) screen and (min-width: 600px);
+      @import url(/css/header.css) screen and (min-width: 600px);
+      @import url(/css/footer.css) screen and (min-width: 600px);
+      @import url(/css/article.css) screen and (min-width: 600px);
+      @import url(/css/sideBar.css) screen and (min-width: 600px);
+      @import url(/css/search.css) screen and (min-width: 600px);
+      @import url(/css/selectSort.css) screen and (min-width: 600px);
+      @import url(/css/main.css) screen and (min-width: 0px) and (max-width: 600px);
+    </style>
+  </head>
+  <body>
+
+      <div class="top">
+        <header>
+          <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: red;">
+            <a href="http://localhost:3000" style="text-decoration: none; color: inherit;">EverySale</a>
+        </h1>
+          <div class="search-container">
+            <form action="/" method="GET">
+              <input type="text" placeholder="어떤 상품을 찾으시나요?" name="product" />
+              <button type="submit">Search</button>
+            </form>
+          </div>
+        </header>
+        <nav class="navbar">
+        </nav>
+
+      </div>
+      <section>
+        <div class="slider">
+          <div class="slides">
+            <div class="slide" style="background: linear-gradient(to right,#a5f65e, #77ff00,#77ff00, #a5f65e);">
+              <a href="https://www.oliveyoung.co.kr/store/planshop/getPlanShopDetail.do?dispCatNo=500000103970019&utm_source=google&utm_medium=powerlink&utm_campaign=onpro_emnet_2406sale-index_0531_0605&utm_content=pc_main&gad_source=1&gclid=EAIaIQobChMI0Iriosy3hgMVM2APAh2-NCUuEAAYASAAEgLE7fD_BwE">
+              <img src="https://image.oliveyoung.co.kr/uploads/contents/202405/28brandSalePre/visual.gif" alt="https://via.placeholder.com/1000x400" />
+              </a>
+            </div>
+            <div class="slide"  style="background: #181818;">
+              <a href="https://m.a-bly.com/">
+                <img src="https://img.a-bly.com/banner/images/banner_image_1716877651507051.gif" alt="https://via.placeholder.com/1000x400" />
+              </a>
+  
+            </div>
+            <div class="slide"  style="background: linear-gradient(to right, #feea52, #FEE101,#FEE101, #feea52)">
+              <a href="https://topten10.goodwearmall.com/main">
+                <img src="https://i.ibb.co/HHZNGbb/image.png" alt="https://via.placeholder.com/1000x400" />
+                </a>
+           </div>
+            <!-- 이미지 추가 -->
+          </div>
+          <div class="dots">
+            <span class="dot" onclick="currentSlide(1)">&#8213;</span>
+            <span class="dot" onclick="currentSlide(2)">&#8213;</span>
+            <span class="dot" onclick="currentSlide(3)">&#8213;</span>
+            <!-- 점 추가 -->
+          </div>
+          <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+          <a class="next" onclick="changeSlide(1)">&#10095;</a>
+          <script>
+            let slideIndex = 1;
+
+            function changeSlide(n) {
+              showSlides((slideIndex += n));
+            }
+
+            function currentSlide(n) {
+              showSlides((slideIndex = n));
+            }
+
+            function showSlides(n) {
+              let slides = document.querySelector('.slides');
+              let slideWidth = document.querySelector('.slide').offsetWidth;
+              let dots = document.querySelectorAll('.dot');
+
+              if (n > slides.children.length) {
+                slideIndex = 1;
+              }
+              if (n < 1) {
+                slideIndex = slides.children.length;
+              }
+
+              slides.style.transform = `translateX(-${(slideIndex - 1) * slideWidth}px)`;
+
+              dots.forEach(dot => dot.classList.remove('active'));
+              dots[slideIndex - 1].classList.add('active');
+            }
+
+          </script>
+        </div>
+      </section>
+      
+      <article>
+        <div class="sortContainer">
+        <fieldset style="border: none;" >
+          <legend>
+              <div class="selectSort">
+                  <li><a href="#" class="sort-link" data-sort=""><b>기본</b></a></li>
+                  <li><a href="#" class="sort-link" data-sort="asc"><b>낮은 가격순</b></a></li>
+                  <li><a href="#" class="sort-link" data-sort="desc"><b>높은 가격순</b></a></li>
+              </div>
+          </legend>
+          <div><%- html %> <%- numNav %></div>
+      </fieldset>
+    </div>
+  
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('.sort-link');
+        const currentUrl = window.location.href;
+        const urlParams = new URLSearchParams(window.location.search);
+        const currentSort = urlParams.get('sort');
+
+        links.forEach(link => {
+            const sortParam = link.getAttribute('data-sort');
+            const newUrl = new URL(currentUrl);
+            newUrl.searchParams.set('sort', sortParam);
+
+            link.setAttribute('href', newUrl.toString());
+
+            if (sortParam === currentSort || (sortParam === '' && !currentSort)) {
+                link.classList.add('selected');
+            }
+        });
+    });
+      </script>
+      </article>
+
+      <aside>
+        <div class="sideBar">
+         <p><b>최근본상품</b></p> <!-- 기능 구현 X -->
+        </div>
+      </aside>
+      
+      <footer>
+        <div class="footer">
+          <div class="footerText">
+            <b>EverySale 정보</b>
+            <p>Tel : -----------</p>
+            <p>메일 : ESa@everysale.co.kr</p>
+            <p>정보 출처 : 네이버 쇼핑, Amazon (추가 예정), Ebay (추가 예정)</p>
+            <br />
+            <p>
+              EverySale에 표시된 상품들에 대하여 EverySale은 통신판매중개자로서
+              거래 당사자가 아니며<br />상품거래 정보 및 거래에 관여하지 않고,
+              어떠한 의무와 책임도 부담하지 않습니다
+            </p>
+          </div>
+        </div>
+      </footer>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        function adjustMenu() {
+          let width = window.innerWidth;
+          let mobileNav = document.querySelector(".navbar");
+
+          if (width <= 600) {
+              mobileNav.innerHTML = `
+        <ul class="navbar-menu">
+            <li class="navbar-item">
+                <a class="navbar-link" href="#">카테고리</a>
+                <div class="submenu">
+                    <ul class="submenu-menu">
+                        <li class="submenu-item">
+                            <a class="submenu-link" href="?category1=화장품/미용">화장품</a>
+                            <div class="subsubmenu">
+                                <ul class="submenu-menu">
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=화장품/미용&category2=마스크/팩">마스크/팩</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=화장품/미용&category2=베이스메이크업">베이스메이크업</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=화장품/미용&category2=색조메이크업">색조메이크업</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=화장품/미용&category2=향수">향수</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=화장품/미용&category2=클렌징">클렌징</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </li>
+                        <li class="submenu-item">
+                            <a class="submenu-link" href="?category1=패션잡화">패션</a>
+                            <div class="subsubmenu">
+                                <ul class="submenu-menu">
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=패션잡화&category2=벨트">벨트</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=패션잡화&category2=선글라스/안경테">선글라스/안경테</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=패션잡화&category2=남성신발">남성신발</a>
+                                        <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=패션잡화&category2=여성신발">여성신발</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=패션잡화&category2=지갑">지갑</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=패션잡화&category2=시계">시계</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </li>
+                        <li class="submenu-item">
+                            <a class="submenu-link" href="?category1=생활/건강">생활</a>
+                            <div class="subsubmenu">
+                                <ul class="submenu-menu">
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=생활/건강&category2=건강관리용품">건강관리용품</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=생활/건강&category2=생활용품">생활용품</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=생활/건강&category2=욕실용품">욕실용품</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=생활/건강&category2=주방용품">주방용품</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=생활/건강&category2=청소용품">청소용품</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </li>
+                        <li class="submenu-item">
+                            <a class="submenu-link" href="?category1=디지털/가전">전자제품</a>
+                            <div class="subsubmenu">
+                                <ul class="submenu-menu ">
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=디지털/가전&category2=PC">데스크탑</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=디지털/가전&category2=노트북">노트북</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=디지털/가전&category2=모니터">모니터</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=디지털/가전&category2=휴대폰">휴대폰</a>
+                                    </li>
+                                    <li class="submenu-item">
+                                        <a class="submenu-link" href="?category1=디지털/가전&category2=카메라/캠코더용품">카메라/캠코더용품</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </li>
+                        <li class="submenu-item">
+                            <a class="submenu-link" href="?category1=가구/인테리어">가구</a>
+                            <div class="subsubmenu">
+                                <ul class="submenu-menu">
+                                    <li class="submenu-item"><a class="submenu-link"
+                                            href="?category1=가구/인테리어&category2=거실가구">거실가구</a></li>
+                                    <li class="submenu-item"><a class="submenu-link"
+                                            href="?category1=가구/인테리어&category2=수납가구">수납가구</a></li>
+                                    <li class="submenu-item"><a class="submenu-link"
+                                            href="?category1=가구/인테리어&category2=주방가구">주방가구</a></li>
+                                    <li class="submenu-item"><a class="submenu-link"
+                                            href="?category1=가구/인테리어&category2=침실가구">침실가구</a></li>
+                                    <li class="submenu-item"><a class="submenu-link"
+                                            href="?category1=가구/인테리어&category2=홈데코">홈데코</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>`;
+        } else {
+              mobileNav.innerHTML = `
+          <ul class="navbar-menu">
+              <li class="navbar-item">
+                  <a class="navbar-link" href="?category1=화장품/미용"><b>화장품/미용</b></a>
+                  <div class="submenu">
+                      <ul class="submenu-menu">
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=화장품/미용&category2=마스크/팩">마스크/팩</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=화장품/미용&category2=베이스메이크업">베이스메이크업</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=화장품/미용&category2=색조메이크업">색조메이크업</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=화장품/미용&category2=향수">향수</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=화장품/미용&category2=클렌징">클렌징</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="navbar-item">
+                  <a class="navbar-link" href="?category1=패션잡화"><b>패션잡화</b></a>
+                  <div class="submenu">
+                      <ul class="submenu-menu">
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=패션잡화&category2=벨트">벨트</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=패션잡화&category2=선글라스/안경테">선글라스/안경테</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=패션잡화&category2=남성신발">남성신발</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=패션잡화&category2=여성신발">여성신발</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=패션잡화&category2=지갑">지갑</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=패션잡화&category2=시계">시계</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="navbar-item">
+                  <a class="navbar-link" href="?category1=생활/건강"><b>생활용품</b></a>
+                  <div class="submenu">
+                      <ul class="submenu-menu">
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=생활/건강&category2=건강관리용품">건강관리용품</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=생활/건강&category2=생활용품">생활용품</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=생활/건강&category2=욕실용품">욕실용품</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=생활/건강&category2=주방용품">주방용품</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=생활/건강&category2=청소용품">청소용품</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="navbar-item">
+                  <a class="navbar-link" href="?category1=디지털/가전"><b>전자제품</b></a>
+                  <div class="submenu">
+                      <ul class="submenu-menu">
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=디지털/가전&category2=PC">데스크탑</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=디지털/가전&category2=노트북">노트북</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=디지털/가전&category2=모니터">모니터</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=디지털/가전&category2=휴대폰">휴대폰</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=디지털/가전&category2=카메라/캠코더용품">카메라/캠코더용품</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="navbar-item">
+                  <a class="navbar-link" href="?category1=가구/인테리어"><b>가구/인테리어</b></a>
+                  <div class="submenu">
+                      <ul class="submenu-menu">
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=가구/인테리어&category2=거실가구">거실가구</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=가구/인테리어&category2=수납가구">수납가구</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=가구/인테리어&category2=주방가구">주방가구</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=가구/인테리어&category2=침실가구">침실가구</a></li>
+                          <li class="submenu-item"><a class="submenu-link" href="?category1=가구/인테리어&category2=홈데코">홈데코</a></li>
+                      </ul>
+                  </div>
+              </li>
+              <li class="navbar-item">
+                <a class="navbar-link" href="?category1=식품"><b>식품</b></a>
+                <div class="submenu">
+                    <ul class="submenu-menu">
+                        <li class="submenu-item"><a class="submenu-link" href="?category1=식품&category2=건강식품">건강식품</a></li>
+                        <li class="submenu-item"><a class="submenu-link" href="?category1=식품&category2=다이어트식품">다이어트식품</a></li>
+                        <li class="submenu-item"><a class="submenu-link" href="?category1=식품&category2=라면/면류">라면/면류</a></li>
+                        <li class="submenu-item"><a class="submenu-link" href="?category1=식품&category2=밀키트">밀키트</a></li>
+                        <li class="submenu-item"><a class="submenu-link" href="?category1=식품&category2=수산물">수산물</a></li>
+                        <li class="submenu-item"><a class="submenu-link" href="?category1=식품&category2=음료">음료</a></li>
+                        <li class="submenu-item"><a class="submenu-link" href="?category1=식품&category2=장류">장류</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="navbar-item">
+              <a class="navbar-link" href="?category1=스포츠/레저"><b>스포츠/레저</b></a>
+              <div class="submenu">
+                  <ul class="submenu-menu">
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=골프">골프</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=낚시">낚시</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=농구">농구</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=등산">등산</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=배구">배구</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=배드민턴">배드민턴</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=수영">수영</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=스케이트/보드/롤러">스케이트/보드/롤러</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=야구">야구</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=테니스">테니스</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=헬스">헬스</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=축구">축구</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=캠핑">캠핑</a></li>
+                      <li class="submenu-item"><a class="submenu-link" href="?category1=스포츠/레저&category2=자전거">자전거</a></li>
+                  </ul>
+              </div>
+          </li>
+          </ul>
+          `;
+          }
+    }
+
+    adjustMenu();
+
+    // 윈도우 크기 변경 시 메뉴 재조정
+    window.addEventListener('resize', adjustMenu);
+});
+      </script>
+    </div>
+  </body>
+</html>

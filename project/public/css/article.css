@@ -1,3 +1,4 @@
+/* article.css */
 body {
   width: 99%;
 }
@@ -9,25 +10,26 @@ body {
 
 .article {
   margin: 0 auto;
-  width: 935px; /* 1100px * 0.85 */
-  height: 977.5px; /* 1150px * 0.85 */
-  padding: 21.25px; /* 25px * 0.85 */
-  border: 2px solid rgb(237, 237, 237);
+  width: 100%;
+  height: auto;
+  padding: 21.25px;
+  border: 2p x solid rgb(237, 237, 237);
 }
 
 .imageContainer {
   margin: 0 auto;
-  width: 918px; /* 1080px * 0.85 */
-  height: 289px; /* 340px * 0.85 */
-  margin-bottom: 17px; /* 20px * 0.85 */
+  width: 1000px;
+  height: 310px;
+  margin-bottom: 17px;
 }
 
 .numberContainer {
   margin: 0 auto;
-  width: 297.5px; /* 350px * 0.85 */
-  height: 42.5px; /* 50px * 0.85 */
+  width: 300px;
+  height: 42.5px;
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 ul.number {
@@ -37,10 +39,10 @@ ul.number {
 }
 
 ul.number > a {
-  margin: 0 1.7px; /* 2px * 0.85 */
-  width: 39.1px; /* 46px * 0.85 */
-  height: 39.1px; /* 46px * 0.85 */
-  border-radius: 12.75px; /* 15px * 0.85 */
+  margin: 0 2px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12.75px;
   background-color: rgb(207, 207, 207);
   color: white;
   text-decoration: none;
@@ -50,7 +52,7 @@ ul.number > a {
 }
 
 ul.number > a {
-  font-size: 18px; /* 30px * 0.85 */
+  font-size: 18px;
 }
 
 ul.number > a:hover {
@@ -58,43 +60,44 @@ ul.number > a:hover {
 }
 
 div.item {
-  width: 204px; /* 240px * 0.85 */
-  height: 215px; /* 270px * 0.85 */
+  width: 220px;
+  height: 230px;
   position: relative;
-  margin-top: 12.75px; /* 15px * 0.85 */
-  margin-left: 12.75px; /* 15px * 0.85 */
-  margin-right: 12.75px; /* 15px * 0.85 */
+  margin-top: 13px;
+  margin-left: 12.75px;
+  margin-right: 12.75px;
   float: left;
   background-color: aliceblue;
-  background-size: 204px 215px; /* 240px * 0.85, 270px * 0.85 */
-  border-radius: 8.5px; /* 10px * 0.85 */
+  background-size: 220px 230px;
+  border-radius: 8.5px;
 }
 
 div.item:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   transition: transform 0.2s ease;
 }
 
 div.itemInfo {
-  width: 204px; /* 240px * 0.85 */
-  height: 21.25px; /* 25px * 0.85 */
-  font-size: 12.75px; /* 15px * 0.85 */
+  width: 220px;
+  height: 25px;
+  font-size: 12.75px;
   color: black;
   position: absolute;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  top: 229.5px; /* 270px * 0.85 */
+  top: 240px;
 }
 
 div.itemPrice {
   display: inline-block;
-  width: 204px; /* 240px * 0.85 */
+  width: 220px;
+  height: 25px;
   color: black;
   position: absolute;
   text-align: center;
-  top: 252px; /* 295px * 0.85 */
+  top: 265px;
 }
 
 div.itemPrice b,

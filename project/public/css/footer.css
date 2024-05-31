@@ -1,3 +1,4 @@
+/* footer.css */
 .footer {
   background-color: rgb(250, 248, 248);
 }
@@ -11,5 +12,5 @@
 }
 .footerText {
   margin: 0 auto;
-  width: 935px;
+  width: 1000px;
 }

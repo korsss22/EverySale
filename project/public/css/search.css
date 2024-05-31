@@ -1,7 +1,7 @@
-/* Additional CSS for the search bar */
+/* search.css */
 .search-container {
+  float: right;
   margin-top: 50px;
-  margin-left: 600px;
 }
 
 .search-container input {
@@ -24,4 +24,5 @@
 
 .search-container button:hover {
   background-color: darkred;
+  border: 2px solid darkred;
 }

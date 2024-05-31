@@ -1,0 +1,416 @@
+/* main.css */
+body {
+  width: 99%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.top {
+  top: 0;
+  width: 99%;
+  background-color: white;
+  position: fixed;
+  z-index: 1000;
+  box-shadow: 2px 2px 5px rgb(218, 218, 218);
+}
+
+header {
+  margin: 0 auto;
+  width: 99%;
+  height: 109px;
+  padding: 15px 0;
+  border-bottom: 1px solid rgb(201, 201, 201);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin-top: 20px;
+  margin-left: 10px;
+  font-size: 40px;
+  font-weight: 900;
+  color: red;
+}
+
+header .logo {
+  text-decoration: none;
+  color: inherit;
+}
+
+.search-container {
+  display: flex;
+}
+
+.search-container input {
+  width: 100px;
+  padding: 10px;
+  border: 2px solid red;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.search-container button {
+  margin-left: -6px;
+  margin-right: 5px;
+  padding: 10px;
+  border: 2px solid red;
+  background-color: red;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-container button:hover {
+  background-color: darkred;
+  border: 2px solid darkred;
+}
+
+/* 네비게이션 바 스타일 */
+.navbar {
+  display: block;
+  margin: 0 auto;
+  width: 99%;
+  height: 40px;
+  padding: 10px 15px;
+}
+
+.navbar-menu {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0px;
+  display: flex;
+}
+
+.navbar-item {
+  position: relative;
+  margin-right: 20px;
+}
+
+.navbar-link {
+  color: rgb(0, 0, 0);
+  font-weight: 900;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+}
+
+.navbar-link:hover {
+  background-color: #ff0000;
+}
+
+/* 서브 메뉴 스타일 */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: #ffffff;
+  padding: 10px 0;
+  border-radius: 5px;
+  min-width: 200px;
+  z-index: 999;
+}
+
+.submenu-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.submenu-item {
+  margin: 0;
+}
+
+.submenu-link {
+  color: rgb(0, 0, 0);
+  font-weight: 900;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.submenu-link:hover {
+  background-color: #e3e3e3;
+}
+
+.navbar-item:hover .submenu {
+  display: block;
+}
+
+/* 서브 서브 메뉴 스타일 */
+.subsubmenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 200px;
+  background-color: #ffffff;
+  padding: 10px 0;
+  border-radius: 5px;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+.submenu-item:hover .subsubmenu {
+  display: block;
+}
+
+/* section.css*/
+
+section {
+  margin-top: 250px;
+}
+
+.slider {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 2px solid rgb(232, 232, 232);
+  margin-bottom: 100px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  float: left;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: #bbb;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #bbb;
+  color: #ffffff;
+}
+
+.dots {
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: -10px;
+  z-index: 999;
+}
+
+.dot {
+  cursor: pointer;
+  font-size: 24px;
+  margin: 0 5px;
+  color: #bbb;
+  transition: color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  color: #717171;
+}
+
+footer {
+  background-color: rgb(248, 248, 248);
+  color: rgb(0, 0, 0);
+  text-align: left;
+  padding: 20px 0;
+  margin-top: 20px;
+  font-size: 10px;
+}
+
+.footerText {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footerText p {
+  margin: 5px 0;
+}
+
+/* article.css */
+body {
+  width: 99%;
+}
+
+.wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.article {
+  margin: 0 auto;
+  width: 1000px; /* 1100px * 0.85 */
+  height: auto; /* 1150px * 0.85 */
+  padding: 21.25px; /* 25px * 0.85 */
+  border: 2px solid rgb(237, 237, 237);
+}
+
+.imageContainer {
+  margin: 0 auto;
+  width: 460px; /* 1080px * 0.85 */
+  height: 289px; /* 340px * 0.85 */
+  margin-bottom: 17px; /* 20px * 0.85 */
+  overflow: hidden;
+}
+
+.numberContainer {
+  margin: 0 auto;
+  width: 297.5px; /* 350px * 0.85 */
+  height: 42.5px; /* 50px * 0.85 */
+  display: flex;
+  justify-content: center;
+}
+
+ul.number {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.number > a {
+  margin: 0 1.7px; /* 2px * 0.85 */
+  width: 39.1px; /* 46px * 0.85 */
+  height: 39.1px; /* 46px * 0.85 */
+  border-radius: 12.75px; /* 15px * 0.85 */
+  background-color: rgb(207, 207, 207);
+  color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul.number > a {
+  font-size: 18px; /* 30px * 0.85 */
+}
+
+ul.number > a:hover {
+  background-color: rgb(255, 0, 0);
+}
+
+div.item {
+  width: 204px; /* 240px * 0.85 */
+  height: 215px; /* 270px * 0.85 */
+  position: relative;
+  margin-top: 12.75px; /* 15px * 0.85 */
+  margin-left: 12.75px; /* 15px * 0.85 */
+  margin-right: 12.75px; /* 15px * 0.85 */
+  float: left;
+  background-color: aliceblue;
+  background-size: 204px 215px; /* 240px * 0.85, 270px * 0.85 */
+  border-radius: 8.5px; /* 10px * 0.85 */
+}
+
+div.itemInfo {
+  width: 204px; /* 240px * 0.85 */
+  height: 21.25px; /* 25px * 0.85 */
+  font-size: 12.75px; /* 15px * 0.85 */
+  color: black;
+  background-color: white;
+  position: absolute;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  top: 229.5px; /* 270px * 0.85 */
+  z-index: 1;
+}
+
+div.itemPrice {
+  display: inline-block;
+  width: 204px; /* 240px * 0.85 */
+  color: black;
+  background-color: white;
+  position: absolute;
+  text-align: center;
+  top: 252px; /* 295px * 0.85 */
+  z-index: 1;
+}
+
+div.itemPrice b,
+div.itemPrice .Price {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+div.Price {
+  font-weight: bolder;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* selectSort.css */
+.sortContainer {
+  margin: 0 auto;
+  width: 460px;
+}
+.selectSort ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* 가로 배열 */
+
+  justify-content: center; /* 중앙 정렬 */
+}
+
+.selectSort li {
+  margin-right: 20px; /* 리스트 아이템 간격 */
+  list-style-type: none;
+  float: left;
+}
+
+.selectSort a {
+  color: black; /* 기본 글자 색상 */
+  text-decoration: none; /* 밑줄 제거 */
+  padding: 10px;
+  transition: color 0.3s, border-bottom 0.3s; /* 전환 효과 */
+  position: relative;
+}
+
+.selectSort a:hover {
+  color: red; /* 마우스 올렸을 때 글자색 변경 */
+}
+
+.selectSort a.selected {
+  color: red; /* 선택된 항목 글자색 */
+  border-bottom: 2px solid red; /* 선택된 항목 밑줄 */
+}
+
+.sideBar {
+  display: none;
+}

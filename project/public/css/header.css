@@ -1,6 +1,6 @@
+/* header.css */
 header {
   margin: 0 auto;
-  /* background-color: red; */
   color: #000000;
   width: 1000px;
   height: 109px;
@@ -20,6 +20,7 @@ header {
 
 header > h1 {
   float: left;
+  margin-top: 35px;
   color: red;
   font-size: 50px;
   font-weight: 900;

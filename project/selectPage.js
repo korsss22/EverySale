@@ -23,7 +23,6 @@ function selectPage(data, page, req, category1, category2, category3, product, s
     let startIndex = Math.max(1, page - 2);
     let endIndex = Math.min(maxPage, startIndex + 4);
 
-    // URL 파라미터 생성
     let urlParams = '';
     if (category1) urlParams += `&category1=${category1}`;
     if (category2) urlParams += `&category2=${category2}`;
@@ -31,28 +30,23 @@ function selectPage(data, page, req, category1, category2, category3, product, s
     if (product) urlParams += `&product=${product}`;
     if (sort) urlParams += `&sort=${sort}`;
     
-    // 이전 페이지 링크 생성
     if (page > 1) {
         html += `<a href="?page=${page - 1}${urlParams}"><</a>`;
     }
 
-    // 페이지 링크 생성
     for (let i = startIndex; i <= endIndex; i++) {
         html += `<a href="?page=${i}${urlParams}" ${
             i === page ? 'style="background-color:red;"' : ""
         }>${i}</a>`;
     }
 
-    // 다음 페이지 링크 생성
     if (page < maxPage) {
         html += `<a href="?page=${page + 1}${urlParams}">></a>`;
     }
 
-    // HTML 마무리
     html += "</ul>";
     html += "</div>";
 
-    // 반환
     return html;
 }
 

@@ -22,12 +22,11 @@ function printData(data, page) {
     const productPriceFormatted = productPrice.toLocaleString();
 
     const imageLink = productData[3];
-    //const discount = productData[4];
     const dataLink = productData[4];
 
     if (col % maxPrintCol === 0) {
       if (col !== 0) {
-        html += "</div>"; // 이미 열려있는 imageContainer를 닫음
+        html += "</div>";
       }
       html += '<div class="imageContainer">';
       row++;
@@ -50,10 +49,7 @@ function printData(data, page) {
     col++;
   }
 
-  html += "</div>"; // section 닫음
+  html += "</div>"; 
   return html;
 }
-//<div class="discountPercent">
-//${discount}%
-//</div>
 module.exports = printData;
