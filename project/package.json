@@ -2,9 +2,9 @@
   "name": "main",
   "version": "1.0.0",
   "description": "EverySale",
-  "main": "project/main.js",
+  "main": "main.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
