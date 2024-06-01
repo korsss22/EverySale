@@ -1,4 +1,21 @@
 <!-- footer.ejs -->
+<!-- 
+1. CSS3를 사용해 수평 정렬하는 방법 -> 화면의 요소들 수평정렬함.
+
+2. CSS3를 사용해 중앙 정렬하는 방법 -> 광고 중앙정렬
+
+3. CSS3를 사용해 One True 레이아웃을 구성 -> 화면 요소들을 Container에 담아 OneTrueLayout 구현
+
+4. CSS3의 절대 좌표를 활용 -> 헤더, 네비, 이미지 슬라이더 등의 요소들에 사용
+
+5. 반응형 웹을 구현하는 방법 -> import를 사용해 width에 따른 css 적용 방식을 조절함
+
+6. 자바스크립트, 객체, 문서객체모델(DOM), jQuery 라이브러리, jQuery 플러그인 사용 
+
+7. 효과적인 디자인 구성 적용
+
+8. 오디오 및 동영상 활용 가능(option) -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>  
@@ -10,6 +27,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
       @import url(/css/section.css) screen and (min-width: 600px);
+      @import url(/css/ad.css) screen and (min-width: 600px);
       @import url(/css/nav.css) screen and (min-width: 600px);
       @import url(/css/header.css) screen and (min-width: 600px);
       @import url(/css/footer.css) screen and (min-width: 600px);
@@ -115,24 +133,26 @@
     </div>
   
       <script>
-          document.addEventListener('DOMContentLoaded', function() {
-        const links = document.querySelectorAll('.sort-link');
-        const currentUrl = window.location.href;
-        const urlParams = new URLSearchParams(window.location.search);
-        const currentSort = urlParams.get('sort');
+          $(document).ready(function() {
+    const links = $('.sort-link');
+    const currentUrl = window.location.href;
+    const urlParams = new URLSearchParams(window.location.search);
+    const currentSort = urlParams.get('sort');
 
-        links.forEach(link => {
-            const sortParam = link.getAttribute('data-sort');
-            const newUrl = new URL(currentUrl);
-            newUrl.searchParams.set('sort', sortParam);
+    links.each(function() {
+        const link = $(this);
+        const sortParam = link.data('sort');
+        const newUrl = new URL(currentUrl);
+        newUrl.searchParams.set('sort', sortParam);
 
-            link.setAttribute('href', newUrl.toString());
+        link.attr('href', newUrl.toString());
 
-            if (sortParam === currentSort || (sortParam === '' && !currentSort)) {
-                link.classList.add('selected');
-            }
-        });
+        if (sortParam === currentSort || (sortParam === '' && !currentSort)) {
+            link.addClass('selected');
+        }
     });
+});
+
       </script>
       </article>
 
@@ -141,7 +161,26 @@
          <p><b>최근본상품</b></p> <!-- 기능 구현 X -->
         </div>
       </aside>
-      
+      <!-- 중앙정렬 활용을 위한 광고 입니다 -->
+      <div class="ad">
+        <div class="adBar">
+            <div id="xButton">X
+            </div>
+        </div>
+        <div>
+            <iframe width="800" height="450" src="https://www.youtube.com/embed/_nRDC4F0Q6U?si=Pqm6Atx7eROIVFjH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $("#xButton").click(function() {
+                    $(".ad").hide();
+                });
+            });
+        </script>
+
+
+      </div>
+
       <footer>
         <div class="footer">
           <div class="footerText">
