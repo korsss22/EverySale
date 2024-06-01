@@ -15,7 +15,7 @@ async function main() {
   updateTable(connection);
 }
 
-//main(); //main함수 데이터 읽어와서 DB에 데이터 저장까지 약 287초 걸림
+main(); //main함수 데이터 읽어와서 DB에 데이터 저장까지 약 287초 걸림
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
