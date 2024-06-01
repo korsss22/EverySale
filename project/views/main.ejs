@@ -168,9 +168,18 @@
             </div>
         </div>
         <div>
-            <iframe width="800" height="450" src="https://www.youtube.com/embed/_nRDC4F0Q6U?si=Pqm6Atx7eROIVFjH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="" height="" src="https://www.youtube.com/embed/_nRDC4F0Q6U?si=Pqm6Atx7eROIVFjH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <script>
+            window.onload = function() {
+                var screenWidth = window.innerWidth * 0.5;
+                var screenheight = window.innerHeight * 0.5;
+
+                $("iframe").attr("width", screenWidth);
+                $("iframe").attr("height", screenheight);
+                $(".adBar").attr("width", screenWidth);
+            }
+            
             $(document).ready(function() {
                 $("#xButton").click(function() {
                     $(".ad").hide();
@@ -198,6 +207,7 @@
         </div>
       </footer>
       <script>
+        $("iframe").attr("width", toString(window.innerWidth*0.5));
         document.addEventListener('DOMContentLoaded', function() {
         function adjustMenu() {
           let width = window.innerWidth;
