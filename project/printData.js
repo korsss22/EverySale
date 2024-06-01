@@ -7,7 +7,7 @@ function printData(data, page) {
   const startIndex = (page - 1) * itemsPerPage;
   const endIndex = page * itemsPerPage;
 
-  let html = '<div class="section">';
+  let html = '<div class="article">';
   let row = 0;
   let col = 0;
 
