@@ -9,7 +9,7 @@ async function connectDB() {
       user: "localhost", //오라클 DB ID
       password: "1234", //오라클 설치할때 PASSWORD
       connectString: "localhost/xe", //포트 : 1521 SID : xe
-      //privilege: oracledb.SYSDBA,
+      privilege: oracledb.SYSDBA,
     });
 
     console.log("Successfully connected to Oracle Database");
